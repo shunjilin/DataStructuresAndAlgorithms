@@ -52,13 +52,12 @@ namespace Mathematics {
         } else return fibNPlus2Mod10 - 1;
     }
 
-    unsigned long long fibonacciPartialSumMod10(unsigned long long m,
-                                                unsigned long long n) {
-        auto n_sum = fibonacciSumMod10(n);
-        auto m_mius_one_sum = fibonacciSumMod10(m - 1);
-        return (m_mius_one_sum < n_sum) ?
-            n_sum - m_mius_one_sum : 10 + n_sum - m_mius_one_sum;
-            
+    unsigned long long fibonacciPartialSumMod10(unsigned long long from,
+                                                unsigned long long to) {
+        auto full_sum = fibonacciSumMod10(to);
+        auto subtract_sum = fibonacciSumMod10(from - 1);
+        return (subtract_sum < full_sum) ?
+            full_sum - subtract_sum : 10 + full_sum - subtract_sum;
     }
 
     unsigned long long GCD(unsigned long long a, unsigned long long b) {
