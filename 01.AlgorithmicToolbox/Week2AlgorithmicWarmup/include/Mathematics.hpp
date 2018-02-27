@@ -52,11 +52,14 @@ namespace Mathematics {
         } else return fibNPlus2Mod10 - 1;
     }
 
+    // can be further optimized to cache sum_to while calculating sum_from,
+    // but violates DRY
     unsigned long long fibonacciPartialSumMod10(unsigned long long from,
                                                 unsigned long long to) {
+        if (from == to) return fibonacciMod10(from);
         auto full_sum = fibonacciSumMod10(to);
         auto subtract_sum = fibonacciSumMod10(from - 1);
-        return (subtract_sum < full_sum) ?
+        return (subtract_sum <= full_sum) ?
             full_sum - subtract_sum : 10 + full_sum - subtract_sum;
     }
 
