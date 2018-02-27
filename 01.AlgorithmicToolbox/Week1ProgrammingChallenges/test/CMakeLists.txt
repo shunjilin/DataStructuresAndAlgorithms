@@ -1,5 +1,3 @@
-include_directories("../include")
-
 add_executable(MaxPairwiseProductUnitTest MaxPairwiseProductUnitTest.cpp)
 add_executable(MaxPairwiseProductStressTest MaxPairwiseProductStressTest.cpp)
 
