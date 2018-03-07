@@ -1,0 +1,7 @@
+add_executable(MoneyChangeStressTest MoneyChangeStressTest.cpp)
+add_executable(FractionalKnapsackUnitTest FractionalKnapsackUnitTest.cpp)
+add_executable(MaxDotProductStressTest MaxDotProductStressTest.cpp)
+add_executable(CoveringSegmentsUnitTest CoveringSegmentsUnitTest.cpp)
+
+target_link_libraries(FractionalKnapsackUnitTest gmock pthread)
+target_link_libraries(CoveringSegmentsUnitTest gmock pthread)

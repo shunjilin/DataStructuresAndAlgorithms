@@ -23,6 +23,6 @@ namespace MPP {
         auto max_pair = getMaxPair(numbers);
         return max_pair.first * max_pair.second;
     }
-};
+}
 
 #endif
