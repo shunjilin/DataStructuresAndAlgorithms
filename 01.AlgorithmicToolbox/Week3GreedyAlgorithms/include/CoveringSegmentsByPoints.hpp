@@ -37,9 +37,6 @@ namespace GreedyAlgorithms {
         }
         return points;
     }
-    
-
-    
 }
 
 #endif
