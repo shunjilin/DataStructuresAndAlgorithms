@@ -1,0 +1,10 @@
+add_executable(BinarySearchUnitTest BinarySearchUnitTest.cpp)
+add_executable(BinarySearchStressTest BinarySearchStressTest.cpp)
+add_executable(MajorityElementUnitTest MajorityElementUnitTest.cpp)
+add_executable(MajorityElementStressTest MajorityElementStressTest.cpp)
+add_executable(ThreeWayPartitionUnitTest ThreeWayPartitionUnitTest.cpp)
+add_executable(ThreeWayPartitionStressTest ThreeWayPartitionStressTest.cpp)
+
+target_link_libraries(BinarySearchUnitTest gmock pthread)
+target_link_libraries(MajorityElementUnitTest gmock pthread)
+target_link_libraries(ThreeWayPartitionUnitTest gmock pthread)
