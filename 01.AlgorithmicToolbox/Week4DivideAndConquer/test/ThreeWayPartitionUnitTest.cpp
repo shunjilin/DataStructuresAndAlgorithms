@@ -12,7 +12,6 @@ public:
     std::vector<int> sequence = {3, 5, 2, 1, 3, 3};
 };
 
-
 TEST(Sequence, UniquePartitionInCorrectIndex) {
     std::vector<int> sequence = {3, 5, 2, 4, 1, 0};
     threeWayPartition(sequence, 0, sequence.size());

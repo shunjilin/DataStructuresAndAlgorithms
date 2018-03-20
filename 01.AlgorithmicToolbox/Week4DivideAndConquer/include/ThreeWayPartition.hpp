@@ -33,15 +33,16 @@ namespace DivideAndConquer {
     void randomizedQuickSortHelper(std::vector<int>& sequence,
                                    std::size_t start, std::size_t end,
                                    UniformRandom<std::size_t>& pivot_index_gen) {
-        if (end - start <= 1) return;
-        auto pivot_index = start + pivot_index_gen.generate() % (end - start);
-        using std::swap;
-        swap(sequence[start], sequence[pivot_index]);
-        auto pivot_start_end = threeWayPartition(sequence, start, end);
-        randomizedQuickSortHelper(sequence, start, pivot_start_end.first,
-                                  pivot_index_gen);
-        randomizedQuickSortHelper(sequence, pivot_start_end.second, end,
-                                  pivot_index_gen);
+        while (start < end) {
+            if (end - start <= 1) return;
+            auto pivot_index = start + pivot_index_gen.generate() % (end - start);
+            using std::swap;
+            swap(sequence[start], sequence[pivot_index]);
+            auto pivot_start_end = threeWayPartition(sequence, start, end);
+            randomizedQuickSortHelper(sequence, start, pivot_start_end.first,
+                                      pivot_index_gen);
+            start = pivot_start_end.second;
+        }
     }
 
     void randomizedQuickSort(std::vector<int>& sequence) {
