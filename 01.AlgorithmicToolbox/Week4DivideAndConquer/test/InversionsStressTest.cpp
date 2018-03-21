@@ -44,6 +44,5 @@ int main() {
         std::cout << "Expected: " << expected
                   << " Actual: " << actual << "\n";
         if (actual != expected) break;
-
     }
 }
