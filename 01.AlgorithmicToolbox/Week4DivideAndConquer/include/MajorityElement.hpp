@@ -16,7 +16,7 @@ namespace DivideAndConquer {
         if ((end - start) < 1) return -1;
         if ((end - start) == 1) return sequence[start];
         auto mid_index = start + (end - start) / 2;
-        auto majority_count_min = ((end - start) / 2) + 1;
+        int majority_count_min = ((end - start) / 2) + 1;
         auto left_majority = getMajorityElementHelper(sequence, start, mid_index);
         auto right_majority = getMajorityElementHelper(sequence, mid_index, end);
         if (left_majority != -1 &&

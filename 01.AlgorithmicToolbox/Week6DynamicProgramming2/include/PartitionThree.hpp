@@ -6,7 +6,7 @@
 
 namespace DynamicProgramming {
     bool partitionThree(const std::vector<unsigned>& weights) {
-        auto sum = std::accumulate(std::begin(weights), std::end(weights), 0);
+        unsigned sum = std::accumulate(std::begin(weights), std::end(weights), 0);
         if (sum % 3 != 0) return false;
         auto partition = sum / 3;       
         auto partition_table =
@@ -19,8 +19,8 @@ namespace DynamicProgramming {
         }
         for (std::size_t item = 1; item <= weights.size(); ++item) {
             auto item_weight = weights[item-1];
-            for (std::size_t sum1 = 0; sum1 <= partition; ++sum1) {
-                for (std::size_t sum2 = 0; sum2 <= partition; ++sum2) {
+            for (unsigned sum1 = 0; sum1 <= partition; ++sum1) {
+                for (unsigned sum2 = 0; sum2 <= partition; ++sum2) {
                     if (partition_table[item-1][sum1][sum2] || // dont choose item
                         (item_weight <= sum1 && 
                          partition_table[item-1][sum1-item_weight][sum2]) || // put item in subset 1

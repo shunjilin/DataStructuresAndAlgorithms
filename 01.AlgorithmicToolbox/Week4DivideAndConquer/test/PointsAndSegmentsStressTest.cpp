@@ -19,7 +19,7 @@ naiveCountSegmentsCoveringPoints(std::vector<int> points,
 }
 
 
-int main(int argc, char *argv[])
+int main()
 {
     UniformRandom<unsigned> N_rng(0, 100);
     UniformRandom<int> point_rng(-100, 100);

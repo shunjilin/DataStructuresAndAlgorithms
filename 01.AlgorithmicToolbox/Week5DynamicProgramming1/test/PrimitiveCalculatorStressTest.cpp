@@ -30,7 +30,7 @@ unsigned getMinCalculatorOperations(unsigned value,
     return min_operation;
 }
 
-int main(int argc, char *argv[])
+int main()
 {
     UniformRandom<unsigned> value_rng(1, 1000);
 

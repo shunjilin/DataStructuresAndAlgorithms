@@ -11,7 +11,7 @@ namespace DivideAndConquer {
     struct Point {
         int coord;
         PointType type;
-        std::size_t index;
+        std::size_t index = 0;
         bool operator<(const Point& other) const {
             if (coord != other.coord) {
                 return coord < other.coord;

@@ -19,7 +19,7 @@ namespace DynamicProgramming {
         auto min_operations =
             std::vector<unsigned>(value + 1, std::numeric_limits<unsigned>::max());
         min_operations[1] = 0;
-        for (int val = 2; val <= value; ++val) {
+        for (unsigned val = 2; val <= value; ++val) {
             min_operations[val] = min_operations[val - 1] + 1; // add 1 operation
             if (divisibleByTwo(val)) {
                 auto val_div_two = val / 2;

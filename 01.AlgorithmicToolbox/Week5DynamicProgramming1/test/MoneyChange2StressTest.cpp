@@ -29,7 +29,7 @@ unsigned getMinCoins(const std::vector<unsigned>& coins, unsigned value,
     return min_coins;
 }
 
-int main(int argc, char *argv[])
+int main()
 {
     UniformRandom<unsigned> n_coins_rng(1, 5);
     UniformRandom<unsigned> coin_value_rng(1, 50);

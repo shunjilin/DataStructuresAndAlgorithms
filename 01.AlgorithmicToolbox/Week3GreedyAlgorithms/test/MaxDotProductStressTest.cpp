@@ -24,7 +24,7 @@ maxDotProductNaive(std::vector<int> list1,
     return max;
 }
 
-int main(int argc, char *argv[])
+int main()
 {
     int N = 5;
     UniformRandom<int> rng(-100000,

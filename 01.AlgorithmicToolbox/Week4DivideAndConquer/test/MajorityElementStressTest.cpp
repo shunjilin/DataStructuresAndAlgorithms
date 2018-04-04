@@ -10,7 +10,7 @@ int getMajorityElementNaive(const std::vector<int>& sequence) {
     for (auto key : sequence) {
         ++key_count[key];
     }
-    auto min_majority_count = (sequence.size() / 2) + 1;
+    int min_majority_count = (sequence.size() / 2) + 1;
     for (auto key_count_pair : key_count) {
         if (key_count_pair.second >= min_majority_count)
             return key_count_pair.first;
@@ -18,7 +18,7 @@ int getMajorityElementNaive(const std::vector<int>& sequence) {
     return -1;
 }
 
-int main(int argc, char *argv[])
+int main()
 {
     UniformRandom<unsigned> length_generator(0, 5);
     UniformRandom<int> key_generator(0, 1); // likely majority

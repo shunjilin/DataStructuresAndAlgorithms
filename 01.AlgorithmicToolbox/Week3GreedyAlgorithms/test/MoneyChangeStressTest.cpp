@@ -19,7 +19,7 @@ unsigned minCoinsNaive(unsigned value) {
     return min_coins;
 }
 
-int main(int argc, char *argv[])
+int main()
 {
     UniformRandom<unsigned> rng(0, 100);
 

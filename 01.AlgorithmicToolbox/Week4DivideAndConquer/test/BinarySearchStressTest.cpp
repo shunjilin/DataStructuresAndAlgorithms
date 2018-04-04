@@ -6,7 +6,7 @@
 
 using namespace DivideAndConquer;
 
-int main(int argc, char *argv[])
+int main()
 {
     UniformRandom<unsigned> length_generator(0, pow(10, 4));
     UniformRandom<int> key_generator(0, pow(10, 9));
@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
             auto actual = binarySearch(sequence, key_to_find);
             auto found = std::binary_search(sequence.begin(), sequence.end(),
                                             key_to_find);
-            if (!found && actual == -1 || found && key_to_find == sequence[actual]) {
+            if ((!found && actual == -1) || (found && key_to_find == sequence[actual])) {
                 std::cout << "OK\n";
             } else {
                 std::cout << "WRONG\n";

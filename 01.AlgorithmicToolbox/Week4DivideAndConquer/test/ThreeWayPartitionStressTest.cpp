@@ -7,7 +7,7 @@
 using namespace DivideAndConquer;
 
 
-int main(int argc, char *argv[])
+int main()
 {
     UniformRandom<int> length_gen(0, 5);//pow(10, 5));
     UniformRandom<int> key_gen(0,5);// pow(10, 9));

@@ -33,7 +33,7 @@ unsigned getLongestCommonSubsequenceLength(const std::vector<int>& sequence1,
     }
 }
 
-int main(int argc, char *argv[])
+int main()
 {
     UniformRandom<unsigned> sequence_length_rng(0, 5);
     UniformRandom<int> entry_rng(-10, 10);

@@ -22,7 +22,7 @@ unsigned editDistance(const std::string& first, const std::string& second) {
 }
 
 
-int main(int argc, char *argv[])
+int main()
 {
     UniformRandom<unsigned> n_char_rng(1,10);
     UniformRandom<char> char_rng('a', 'z');
@@ -31,11 +31,11 @@ int main(int argc, char *argv[])
         auto first_n_char = n_char_rng.generate();
         auto second_n_char = n_char_rng.generate();
         std::string first, second;
-        for (int i = 0; i < first_n_char; ++i) {
+        for (unsigned i = 0; i < first_n_char; ++i) {
             auto character = char_rng.generate();
             first.append(&character, 1);
         }
-        for (int i = 0; i < second_n_char; ++i) {
+        for (unsigned i = 0; i < second_n_char; ++i) {
             auto character = char_rng.generate();
             second.append(&character, 1);
         }

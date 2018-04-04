@@ -22,7 +22,7 @@ std::string LargestNumberNaive(std::vector<std::string> digits) {
 
 
 
-int main(int argc, char *argv[])
+int main()
 {
     UniformRandom<unsigned> n_digits_rng(1, 10);
     UniformRandom<unsigned> digits_rng(1, 1000);

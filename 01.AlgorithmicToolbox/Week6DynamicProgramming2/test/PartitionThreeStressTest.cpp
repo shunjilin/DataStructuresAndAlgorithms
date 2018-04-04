@@ -31,7 +31,7 @@ bool partitionThree(std::vector<unsigned> weights) {
     return partitionThreeHelper(partition, partition, weights);
 }
 
-int main(int argc, char *argv[])
+int main()
 {
     UniformRandom<unsigned> weight_rng(0, 100);
     UniformRandom<unsigned> n_weights_rng(0, 6);

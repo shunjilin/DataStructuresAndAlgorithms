@@ -17,7 +17,7 @@ TEST(PlacingParenthesis, ReturnMaxValue) {
 
 TEST(PlacingParenthesis, ReturnMaxValue2) {
     std::string expression = "1+0+3*5";
-    ASSERT_THAT(maxValueFromPlacingParenthesis(expression), 149040);
+    ASSERT_THAT(maxValueFromPlacingParenthesis(expression), 20);
 }
 
 int main(int argc, char *argv[])

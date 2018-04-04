@@ -16,7 +16,7 @@ unsigned optimalWeight(unsigned max_weight, std::vector<unsigned> weights) {
 }
 
 
-int main(int argc, char *argv[])
+int main()
 {
     UniformRandom<unsigned> weight_rng(0, 100);
     UniformRandom<unsigned> n_weights_rng(0, 2);

@@ -20,7 +20,7 @@ double naiveGetClosestPointsDistance(const std::vector<Point>& points) {
     return min_dist;
 }
 
-int main(int argc, char *argv[])
+int main()
 {
     UniformRandom<int> point_coordinates_rng(-10, 10);
     UniformRandom<unsigned> n_points_rng(2, 3);
