@@ -1,8 +1,11 @@
+
+
 #ifndef LARGEST_NUMBER_HPP
 #define LARGEST_NUMBER_HPP
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <numeric>
 
 namespace GreedyAlgorithms {
 

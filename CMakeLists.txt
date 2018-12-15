@@ -6,5 +6,6 @@ set(CMAKE_CXX_FLAGS "-Wall -Wextra -Werror -g")
 
 include_directories(include)
 
+add_subdirectory(googletest)
 add_subdirectory(01.AlgorithmicToolbox)
 add_subdirectory(02.DataStructures)
