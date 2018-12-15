@@ -1,2 +1,5 @@
 add_executable(CheckBracketsUnitTest CheckBracketsUnitTest.cpp)
 target_link_libraries(CheckBracketsUnitTest gmock pthread)
+
+add_executable(TreeHeightUnitTest TreeHeightUnitTest.cpp)
+target_link_libraries(TreeHeightUnitTest gmock pthread)
