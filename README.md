@@ -1,8 +1,8 @@
 ##### Coursera: Data Structures And Algorithms Specialization
 
-##### Shunji Lin  
+##### Shunji Lin
 
-Programming problems from [Data Structures and Algorithms Specialization](https://www.coursera.org/specializations/data-structures-algorithms).  
+Programming problems from [Data Structures and Algorithms Specialization](https://www.coursera.org/specializations/data-structures-algorithms).
 
 *C++ implementations, CMake and unit tests using Google Test/ Google Mock*
 
@@ -13,3 +13,6 @@ Programming problems from [Data Structures and Algorithms Specialization](https:
    4. Week 4 Divide And Conquer
    5. Week 5 Dynamic Programming 1
    6. Week 6 Dynamic Programming 2
+
+2. Data Structures
+   1. Week 1 Basic Data Structures
