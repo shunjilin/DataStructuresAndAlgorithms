@@ -16,3 +16,20 @@ Programming problems from [Data Structures and Algorithms Specialization](https:
 
 2. Data Structures
    1. Week 1 Basic Data Structures
+
+## Cloning the repository
+```
+git clone https://github.com/shunjilin/AlgorithmsSpecialization --recurse-submodules
+```
+
+## Usage
+In root folder, make directory ./build
+
+In ./build, run:
+```
+cmake ..
+```
+followed by:
+```
+make
+```
