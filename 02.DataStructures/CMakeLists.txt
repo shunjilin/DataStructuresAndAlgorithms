@@ -1,1 +1,2 @@
 add_subdirectory(Week1BasicDataStructures)
+add_subdirectory(Week2PriorityQueuesAndDisjointSets)
