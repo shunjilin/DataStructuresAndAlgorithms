@@ -1,2 +1,5 @@
 add_executable(BuildMinHeapUnitTest BuildMinHeapUnitTest.cpp)
 target_link_libraries(BuildMinHeapUnitTest gmock pthread)
+
+add_executable(ParallelProcessingUnitTest ParallelProcessingUnitTest.cpp)
+target_link_libraries(ParallelProcessingUnitTest gmock pthread)
