@@ -16,6 +16,7 @@ Programming problems from [Data Structures and Algorithms Specialization](https:
 
 2. Data Structures
    1. Week 1 Basic Data Structures
+   2. Week 2 Priority Queue and Disjoint Sets
 
 ## Cloning the repository
 ```
