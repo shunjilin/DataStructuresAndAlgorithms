@@ -3,3 +3,6 @@ target_link_libraries(PhoneBookUnitTest gmock pthread)
 
 add_executable(HashingWithChainsUnitTest HashingWithChainsUnitTest.cpp)
 target_link_libraries(HashingWithChainsUnitTest gmock pthread)
+
+add_executable(FindPatternInTextUnitTest FindPatternInTextUnitTest.cpp)
+target_link_libraries(FindPatternInTextUnitTest gmock pthread)
