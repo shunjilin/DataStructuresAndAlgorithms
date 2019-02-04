@@ -1,3 +1,4 @@
 add_subdirectory(Week1BasicDataStructures)
 add_subdirectory(Week2PriorityQueuesAndDisjointSets)
 add_subdirectory(Week4HashTablesAndHashFunctions)
+add_subdirectory(Week6BinarySearchTrees)
