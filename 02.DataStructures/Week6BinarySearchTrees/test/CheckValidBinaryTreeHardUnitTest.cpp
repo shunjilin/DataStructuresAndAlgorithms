@@ -1,18 +1,18 @@
 #include <gmock/gmock.h>
-#include "CheckValidBinaryTree.hpp"
+#include "CheckValidBinaryTreeHard.hpp"
 
 using namespace testing;
 
 TEST(ValidBinaryTreeInitialize, returnsTrue) {
     BinaryTree tree = BinaryTree(
-        {{0, 2, 1, 2}, {1, 1, -1, -1}, {2, 2, -1, -1}}
+        {{0, 2, 1, 2}, {1, 1, -1, -1}, {2, 3, -1, -1}}
         );
     ASSERT_TRUE(isBinaryTreeValid(tree));
 }
 
 TEST(InvlidBinaryTreeInitialize, returnsFalse) {
     BinaryTree tree = BinaryTree(
-        {{0, 2, 1, 2}, {1, 2, -1, -1}, {2, 3, -1, -1}}
+        {{0, 1, 1, 2}, {1, 2, -1, -1}, {2, 3, -1, -1}}
         );
     ASSERT_FALSE(isBinaryTreeValid(tree));
 }
