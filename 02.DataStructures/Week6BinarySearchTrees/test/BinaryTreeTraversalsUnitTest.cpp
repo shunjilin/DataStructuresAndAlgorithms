@@ -12,17 +12,17 @@ public:
         );
 };
 
-// TEST_F(BinaryTreeInitialize, inOrderTraversal) {
-//     ASSERT_THAT(inOrderTraversal(tree), ElementsAre(50, 70, 80, 30, 90, 40, 0, 20, 10, 60));
-// }
+TEST_F(BinaryTreeInitialize, inOrderTraversal) {
+    ASSERT_THAT(inOrderTraversal(tree), ElementsAre(50, 70, 80, 30, 90, 40, 0, 20, 10, 60));
+}
 
-// TEST_F(BinaryTreeInitialize, preOrderTraversal) {
-//     ASSERT_THAT(preOrderTraversal(tree), ElementsAre(0, 70, 50, 40, 30, 80, 90, 20, 60, 10));
-// }
+TEST_F(BinaryTreeInitialize, preOrderTraversal) {
+    ASSERT_THAT(preOrderTraversal(tree), ElementsAre(0, 70, 50, 40, 30, 80, 90, 20, 60, 10));
+}
 
-// TEST_F(BinaryTreeInitialize, postOrderTraversal) {
-//     ASSERT_THAT(postOrderTraversal(tree), ElementsAre(50, 80, 90, 30, 40, 70, 10, 60, 20, 0));
-// }
+TEST_F(BinaryTreeInitialize, postOrderTraversal) {
+    ASSERT_THAT(postOrderTraversal(tree), ElementsAre(50, 80, 90, 30, 40, 70, 10, 60, 20, 0));
+}
 
 class BinaryTreeInitialize2: public Test {
 public:

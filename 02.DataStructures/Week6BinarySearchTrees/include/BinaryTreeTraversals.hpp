@@ -23,37 +23,31 @@ struct BinaryTree {
 std::vector<int> inOrderTraversal(BinaryTree const & tree) {
     std::stack<Node> stack;
     std::vector<int> result;
-    auto current = tree.nodes[0];
-    auto previous = current;
-    stack.push(current);
-    while (!stack.empty()) {
-        current = stack.top();
-            std::cout << "current " << current.key << std::endl;
-            std::cout << "prev " << previous.key << std::endl;
-        // keep traversing left unless ascended from children
-        while (current.left_index != previous.index &&
-               current.right_index != previous.index &&
-               current.left_index != -1) {
-            previous = current;
-            current = tree.nodes[current.left_index];
-            stack.push(current);
-            std::cout << "top push " << current.key << " " << previous.key << std::endl;
-        }
-        // end of left, print
-        previous = stack.top();
-        stack.pop();
-        result.push_back(previous.key);
-        
-        std::cout << "pop " << current.key << std::endl;
+    auto const *current = &tree.nodes[0];
 
-        // go right
-        if (current.right_index != previous.index && current.right_index != -1) {
-            current = tree.nodes[current.right_index];
-            stack.push(current);
-            std::cout << "bot push " << current.key << " " << previous.key << std::endl;
+    while (!stack.empty() || current) {
+        if (current) {
+            // go left
+            stack.push(*current);
+            if (current->left_index != -1) {
+                current = &tree.nodes[current->left_index];                
+            } else {
+                current = nullptr;
+            }
+        } else {
+            // go up
+            current = &stack.top();
+            stack.pop();
+            result.push_back(current->key);
+            // go right
+            if (current->right_index != -1) {
+                current = &tree.nodes[current->right_index];
+            } else {
+                current = nullptr;
+            }
+            
         }
     }
-    
     return result;
 }
 
@@ -107,7 +101,7 @@ std::vector<int> postOrderTraversal(BinaryTree const & tree) {
             stack.pop();
         }
         // if came up from right child, done processing children and add to result
-        else if (current.right_index == previous.index){
+        else if (current.right_index == previous.index) {
             result.push_back(current.key);
             previous = current;
             stack.pop();
