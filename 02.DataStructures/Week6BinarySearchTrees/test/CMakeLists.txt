@@ -1,2 +1,5 @@
 add_executable(BinaryTreeTraversalsUnitTest BinaryTreeTraversalsUnitTest.cpp)
 target_link_libraries(BinaryTreeTraversalsUnitTest gmock pthread)
+
+add_executable(CheckValidBinaryTreeUnitTest CheckValidBinaryTreeUnitTest.cpp)
+target_link_libraries(CheckValidBinaryTreeUnitTest gmock pthread)
