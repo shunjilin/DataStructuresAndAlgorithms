@@ -1,10 +1,6 @@
 ##### Coursera: Data Structures And Algorithms Specialization
 
-##### Shunji Lin
-
 Programming problems from [Data Structures and Algorithms Specialization](https://www.coursera.org/specializations/data-structures-algorithms).
-
-*C++ implementations, CMake and unit tests using Google Test/ Google Mock*
 
 1. Algorithmic Toolbox
    1. Week 1 Programming Challenges
@@ -25,13 +21,4 @@ git clone https://github.com/shunjilin/AlgorithmsSpecialization --recurse-submod
 ```
 
 ## Usage
-In root folder, make directory ./build
-
-In ./build, run:
-```
-cmake ..
-```
-followed by:
-```
-make
-```
+See subfolders for language specific implementations/usage

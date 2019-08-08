@@ -1,9 +1,0 @@
-add_executable(KnapsackUnitTest KnapsackUnitTest.cpp)
-add_executable(KnapsackStressTest KnapsackStressTest.cpp)
-add_executable(PartitionThreeUnitTest PartitionThreeUnitTest.cpp)
-add_executable(PartitionThreeStressTest PartitionThreeStressTest.cpp)
-add_executable(PlacingParenthesisUnitTest PlacingParenthesisUnitTest.cpp)
-
-target_link_libraries(KnapsackUnitTest gmock pthread)
-target_link_libraries(PartitionThreeUnitTest gmock pthread)
-target_link_libraries(PlacingParenthesisUnitTest gmock pthread)
