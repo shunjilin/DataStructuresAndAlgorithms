@@ -1,6 +1,6 @@
 export const getMaxPair = (numbers: number[]) => {
   if (numbers.length < 2) {
-    throw new Error("must contain more than 2 numbers")
+    throw new Error("must contain at least 2 numbers")
   }
   let largest = 0
   let secondLargest = 0
