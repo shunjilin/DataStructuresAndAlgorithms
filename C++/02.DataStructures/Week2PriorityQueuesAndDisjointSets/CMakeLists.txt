@@ -1,0 +1,11 @@
+add_executable(BuildMinHeapUnitTest BuildMinHeapUnitTest.cpp)
+target_link_libraries(BuildMinHeapUnitTest gmock pthread)
+add_test(BuildMinHeapUnitTest BuildMinHeapUnitTest)
+
+add_executable(ParallelProcessingUnitTest ParallelProcessingUnitTest.cpp)
+target_link_libraries(ParallelProcessingUnitTest gmock pthread)
+add_test(ParallelProcessingUnitTest ParallelProcessingUnitTest)
+
+add_executable(MergingTablesUnitTest MergingTablesUnitTest.cpp)
+target_link_libraries(MergingTablesUnitTest gmock pthread)
+add_test(MergingTablesUnitTest MergingTablesUnitTest)

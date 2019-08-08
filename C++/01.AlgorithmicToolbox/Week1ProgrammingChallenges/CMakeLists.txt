@@ -1,0 +1,5 @@
+add_executable(MaxPairwiseProductUnitTest MaxPairwiseProductUnitTest.cpp)
+add_executable(MaxPairwiseProductStressTest MaxPairwiseProductStressTest.cpp)
+
+target_link_libraries(MaxPairwiseProductUnitTest gmock pthread)
+add_test(MaxPairwiseProductUnitTest MaxPairwiseProductUnitTest)

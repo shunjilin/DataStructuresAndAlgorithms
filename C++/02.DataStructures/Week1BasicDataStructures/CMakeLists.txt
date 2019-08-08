@@ -1,0 +1,16 @@
+add_executable(CheckBracketsUnitTest CheckBracketsUnitTest.cpp)
+target_link_libraries(CheckBracketsUnitTest gmock pthread)
+add_test(CheckBracketsUnitTest CheckBracketsUnitTest)
+
+add_executable(TreeHeightUnitTest TreeHeightUnitTest.cpp)
+target_link_libraries(TreeHeightUnitTest gmock pthread)
+add_test(TreeHeightUnitTest TreeHeightUnitTest)
+
+add_executable(NetworkPacketProcessingSimulationUnitTest
+  NetworkPacketProcessingSimulationUnitTest)
+target_link_libraries(NetworkPacketProcessingSimulationUnitTest gmock pthread)
+add_test(NetworkPacketProcessingSimulationUnitTest NetworkPacketProcessingSimulationUnitTest)
+
+add_executable(StackWithMaxUnitTest StackWithMaxUnitTest.cpp)
+target_link_libraries(StackWithMaxUnitTest gmock pthread)
+add_test(StackWithMaxUnitTest StackWithMaxUnitTest)
