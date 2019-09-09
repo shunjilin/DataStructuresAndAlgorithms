@@ -1,6 +1,2 @@
-add_executable(MathematicsUnitTest MathematicsUnitTest.cpp)
-add_executable(FibonacciStressTest FibonacciStressTest.cpp)
-add_executable(GCD_LCM_StressTest  GCD_LCM_StressTest.cpp)
-
-target_link_libraries(MathematicsUnitTest gmock pthread)
-add_test(MathematicsUnitTest MathematicsUnitTest)
+add_executable(MathUnitTest MathUnitTest.cpp)
+target_link_libraries(MathUnitTest gmock pthread)
