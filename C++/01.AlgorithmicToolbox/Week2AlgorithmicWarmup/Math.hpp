@@ -8,9 +8,9 @@ unsigned long long fibonacci(unsigned long long n) {
   }
   unsigned long long previous = 0, current = 1;
   for (unsigned i = 2; i <= n; ++i) {
-    auto new_current = previous + current;
+    auto sum = previous + current;
     previous = current;
-    current = new_current;
+    current = sum;
   }
   return current;
 }
@@ -22,9 +22,9 @@ int fibonacciMod(unsigned long long n, unsigned long long mod) {
   }
   int previous = 0, current = 1;
   for (unsigned i = 2; i <= n; ++i) {
-    auto new_current = (previous + current) % mod;
+    auto sum_modulo = (previous + current) % mod;
     previous = current;
-    current = new_current;
+    current = sum_modulo;
   }
   return current;
 }
@@ -47,16 +47,19 @@ unsigned long long LCM(unsigned long long a, unsigned long long b) {
 }
 
 // Returns the period length of Fibonacci modulo mod (Pisano period)
-unsigned long long fibonacciModPeriodLength(unsigned long long mod) {
-  if (mod == 1)
+unsigned long long pisanoPeriod(unsigned long long mod) {
+  if (mod == 1) {
     return 1;
+  }
   unsigned long long previous = 0, current = 1;
-  for (unsigned long long i = 2;; ++i) {
-    auto new_current = (previous + current) % mod;
+  unsigned long long sequence_length = 0;
+  while (true) {
+    auto sum_modulo = (previous + current) % mod;
     previous = current;
-    current = new_current;
+    current = sum_modulo;
+    ++sequence_length;
     if (previous == 0 && current == 1) { // period repeats
-      return i - 1;
+      return sequence_length;
     }
   }
 }
@@ -66,9 +69,8 @@ unsigned long long fibonacciModPeriodLength(unsigned long long mod) {
 // Uses the fact that Fibonacci Mod sequence repeats
 unsigned long long fibonacciModFast(unsigned long long n,
                                     unsigned long long mod) {
-  auto modPeriod = fibonacciModPeriodLength(mod);
-  n = n % modPeriod;
-  return fibonacciMod(n, mod);
+  auto mod_period = pisanoPeriod(mod);
+  return fibonacciMod(n % mod_period, mod);
 }
 
 // Returns the last digit of sum of fibonacci numbers up to n
