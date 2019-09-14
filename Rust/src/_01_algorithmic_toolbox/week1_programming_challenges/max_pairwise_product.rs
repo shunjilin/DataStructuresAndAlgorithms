@@ -1,5 +1,5 @@
-pub fn max_pair(numbers: &Vec<u64>) -> [u64; 2]{
-    let mut largest_number : u64 = 0;
+pub fn max_pair(numbers: &Vec<u64>) -> [u64; 2] {
+    let mut largest_number: u64 = 0;
     let mut next_largest_number: u64 = 0;
     for number in numbers {
         if *number > largest_number {
@@ -11,7 +11,7 @@ pub fn max_pair(numbers: &Vec<u64>) -> [u64; 2]{
 }
 
 pub fn max_pairwise_product(numbers: &Vec<u64>) -> u64 {
-    return max_pair(numbers).iter().product()
+    return max_pair(numbers).iter().product();
 }
 
 #[cfg(test)]
@@ -32,6 +32,6 @@ mod test {
     #[test]
     fn get_max_pairwse_product_from_vec() {
         let numbers = generate_numbers();
-        assert_eq!(max_pairwise_product(&numbers),  6815761142);
+        assert_eq!(max_pairwise_product(&numbers), 6815761142);
     }
 }

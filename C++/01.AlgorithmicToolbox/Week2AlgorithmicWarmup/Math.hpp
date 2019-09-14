@@ -83,13 +83,13 @@ unsigned fibonacciSumLastDigit(unsigned long long n) {
 unsigned fibonacciPartialSumLastDigit(unsigned long long n,
                                       unsigned long long m) {
   // can show that reduces to fib(m+2) - fib(n+1)
-  return (10 + (fibonacciModFast(m + 2, 10) - fibonacciModFast(n + 1, 10))) %
+  return (10 + fibonacciModFast(m + 2, 10) - fibonacciModFast(n + 1, 10)) %
          10;
 }
 
 // Returns the last digit of sum of squares of fibonacci numbers up to n
 unsigned fibonacciSumOfSquaresLastDigit(unsigned long long n) {
-  // can show that reduces to fib(n)*fib(n+1)
+  // can show that reduces to fib(n) * fib(n+1)
   // from fact that fib(n) = fib(n+1) - fib(n-1)
   // fib(n)^2 = fib(n) * (fib(n+1) - fib(n-1))
   // fib(n)^2 = fib(n) * fib(n+1) - fib(n) * fib(n-1)
