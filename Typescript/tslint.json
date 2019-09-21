@@ -1,7 +1,8 @@
 {
     "defaultSeverity": "error",
     "rules": {
-        "semicolon": [true, "never"]
+        "semicolon": [true, "never"],
+	"ordered-imports": false
     },
     "extends": [
         "tslint:recommended", "tslint-config-prettier"

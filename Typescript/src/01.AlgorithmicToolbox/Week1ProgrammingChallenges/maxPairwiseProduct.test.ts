@@ -1,4 +1,4 @@
-import { getMaxPair, maxPairwiseProduct } from "./MaxPairwiseProduct"
+import { getMaxPair, maxPairwiseProduct } from "./maxPairwiseProduct"
 
 describe("max pairwise product", () => {
   const numbers = [21468, 16859, 82178, 70496, 82939, 44491]

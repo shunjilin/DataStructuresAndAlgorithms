@@ -35,7 +35,7 @@ pub fn lcm(a: u64, b: u64) -> u64 {
     a * b / gcd(a, b)
 }
 
-// returns the period length of fibonacci modulo (Pisano period)
+// returns the period length of fibonacci modulo
 pub fn pisano_period(modulo: u64) -> u64 {
     if modulo == 1 {
         return 1;
@@ -74,12 +74,12 @@ pub fn fibonacci_partial_sum_last_digit(n: u64, m: u64) -> u64 {
 
 // returns the last digit of sum of squares of fibonacci numbers up to n
 pub fn fibonacci_sum_of_squares_last_digit(n: u64) -> u64 {
-  // can show that reduces to fib(n) * fib(n+1)
-  // from fact that fib(n) = fib(n+1) - fib(n-1)
-  // fib(n)^2 = fib(n) * (fib(n+1) - fib(n-1))
-  // fib(n)^2 = fib(n) * fib(n+1) - fib(n) * fib(n-1)
-  // then write out as sequence
-  fibonacci_modulo_fast(n, 10).pow(2) % 10
+    // can show that reduces to fib(n) * fib(n+1)
+    // from fact that fib(n) = fib(n+1) - fib(n-1)
+    // fib(n)^2 = fib(n) * (fib(n+1) - fib(n-1))
+    // fib(n)^2 = fib(n) * fib(n+1) - fib(n) * fib(n-1)
+    // then write out as sequence
+    (fibonacci_modulo_fast(n, 10) * fibonacci_modulo_fast(n + 1, 10)) % 10
 }
 
 #[cfg(test)]
@@ -128,6 +128,7 @@ mod test {
 
     #[test]
     fn test_correct_fibonacci_sum_of_squares_last_digit() {
-        assert_eq!(fibonacci_sum_of_squares_last_digit(1234567890), 0)
+        assert_eq!(fibonacci_sum_of_squares_last_digit(1234567890), 0);
+        assert_eq!(fibonacci_sum_of_squares_last_digit(5), 0)
     }
 }
