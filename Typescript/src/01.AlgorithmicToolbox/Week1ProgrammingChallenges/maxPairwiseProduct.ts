@@ -1,18 +1,18 @@
-export const getMaxPair = (numbers: number[]) => {
+export const getMaxPair = (numbers: number[]): [number, number] => {
   if (numbers.length < 2) {
-    throw new Error("must contain at least 2 numbers")
+    throw new Error("must contain at least 2 numbers");
   }
-  let largest = 0
-  let secondLargest = 0
-  numbers.map(num => {
+  let largest = 0;
+  let secondLargest = 0;
+  numbers.map((num) => {
     if (num > largest) {
-      secondLargest = largest
-      largest = num
+      secondLargest = largest;
+      largest = num;
     }
-  })
-  return [largest, secondLargest]
-}
+  });
+  return [largest, secondLargest];
+};
 
-export const maxPairwiseProduct = (numbers: number[]) => {
-  return getMaxPair(numbers).reduce((a: number, b: number) => a * b)
-}
+export const maxPairwiseProduct = (numbers: number[]): number => {
+  return getMaxPair(numbers).reduce((a: number, b: number) => a * b);
+};
