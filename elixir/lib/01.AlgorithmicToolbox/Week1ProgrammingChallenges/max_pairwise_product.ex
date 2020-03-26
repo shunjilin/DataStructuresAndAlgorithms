@@ -5,29 +5,41 @@ defmodule DataStructuresAndAlgorithms.AlgorithmicToolBox.Week1ProgrammingChallen
 
   @doc """
   # Maximum Pairwise Product Problem
-  Find the maximum product of two distinct numbers in a sequence of non-negative integers
-  indices must be different, value can be the same
 
-  ## Given a list of non negative integers, return the maximum pairwise product
+  Given a `list` of `non negative integers`, return the maximum pairwise product, i.e. product between the two largest distinct (different index) numbers in the list
+
+  If success, returns `{:ok, max_pairwise_product}`
+
+  Input must be list of non-negative integers with at least 2 elements, otherwise returns `{:error, :invalid_input}`
 
   ## Examples
   iex> import DataStructuresAndAlgorithms.AlgorithmicToolBox.Week1ProgrammingChallenges.MaxPairwiseProduct
-  iex> number_list = [7, 5, 14, 2, 8, 8, 10, 1, 2, 3]
+  iex> number_list = [1, 2, 3, 4, 5, 6]
   iex> max_pairwise_product(number_list)
-  140
+  {:ok, 30}
   """
-  @spec max_pairwise_product(list(non_neg_integer())) :: non_neg_integer()
+  @spec max_pairwise_product(list(non_neg_integer())) ::
+          {:ok, non_neg_integer()} | {:error, atom()}
   def max_pairwise_product(non_negative_integers) do
-    if length(non_negative_integers) < 2 do
-      raise ArgumentError, message: "Requires at least 2 non-negative integers in list input"
+    with :ok <- validate_non_negative_integers(non_negative_integers, 2) do
+      max_a = Enum.max(non_negative_integers)
+
+      max_b =
+        non_negative_integers
+        |> List.delete(max_a)
+        |> Enum.max()
+
+      {:ok, max_a * max_b}
     end
+  end
 
-    max_a = Enum.max(non_negative_integers)
-
-    max_b =
-      List.delete(non_negative_integers, max_a)
-      |> Enum.max()
-
-    max_a * max_b
+  defp validate_non_negative_integers(non_negative_integers, min_length) do
+    if is_list(non_negative_integers) and
+         Enum.all?(non_negative_integers, fn x -> is_integer(x) and x >= 0 end) and
+         length(non_negative_integers) >= min_length do
+      :ok
+    else
+      {:error, :invalid_input}
+    end
   end
 end
