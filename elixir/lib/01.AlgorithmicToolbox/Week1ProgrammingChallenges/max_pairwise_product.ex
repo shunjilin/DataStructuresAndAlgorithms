@@ -19,7 +19,7 @@ defmodule DataStructuresAndAlgorithms.AlgorithmicToolBox.Week1ProgrammingChallen
   {:ok, 30}
   """
   @spec max_pairwise_product(list(non_neg_integer())) ::
-          {:ok, non_neg_integer()} | {:error, atom()}
+          {:ok, non_neg_integer()} | {:error, :invalid_input}
   def max_pairwise_product(non_negative_integers) do
     with :ok <- validate_non_negative_integers(non_negative_integers, 2) do
       max_a = Enum.max(non_negative_integers)
