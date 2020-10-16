@@ -1,4 +1,4 @@
-export const getMaxPair = (numbers: number[]): [number, number] => {
+export const getMaxPair = (numbers) => {
   if (numbers.length < 2) {
     throw new Error("must contain at least 2 numbers");
   }
@@ -13,6 +13,6 @@ export const getMaxPair = (numbers: number[]): [number, number] => {
   return [largest, secondLargest];
 };
 
-export const maxPairwiseProduct = (numbers: number[]): number => {
-  return getMaxPair(numbers).reduce((a: number, b: number) => a * b);
+export const maxPairwiseProduct = (numbers) => {
+  return getMaxPair(numbers).reduce((a, b) => a * b);
 };
