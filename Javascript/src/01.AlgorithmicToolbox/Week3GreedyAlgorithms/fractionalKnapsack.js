@@ -1,6 +1,8 @@
 /**
  * Problem 2 - Maximum Value of the Loot
- * Fractional Knapsack
+ *
+ * Fractional Knapsack Problem
+ *
  * @param {Array.<{value: number, weight: number}>} items list of items each with value and weight
  * @param {number} capacity total capacity of knapsack
  * @returns {number} maximum value of items that can fit into the knapsack (fractional weight allowed)

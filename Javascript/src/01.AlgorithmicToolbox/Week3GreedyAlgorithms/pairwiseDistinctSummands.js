@@ -7,13 +7,14 @@
 export function pairwseDistinctSummands(sum) {
   const summands = [];
   let summand = 1;
-  while (sum > 0) {
-    const remainder = sum - summand;
+  let differenceFromSum = sum;
+  while (differenceFromSum > 0) {
+    const remainder = differenceFromSum - summand;
     if (remainder <= summand) {
-      summands.push(sum);
+      summands.push(differenceFromSum);
       return summands;
     }
-    sum -= summand;
+    differenceFromSum -= summand;
     summands.push(summand);
     ++summand;
   }
