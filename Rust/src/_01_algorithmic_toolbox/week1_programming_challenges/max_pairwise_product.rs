@@ -1,4 +1,4 @@
-pub fn max_pair(numbers: &Vec<u64>) -> [u64; 2] {
+pub fn max_pair(numbers: &[u64]) -> [u64; 2] {
     let mut largest_number: u64 = 0;
     let mut next_largest_number: u64 = 0;
     for number in numbers {
