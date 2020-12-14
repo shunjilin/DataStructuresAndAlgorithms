@@ -9,20 +9,17 @@ pub fn count_segments_covering_points(segments: &[Segment], points: &[i64]) -> V
         all_points.push(Point {
             point: segment.start,
             point_type: PointType::Start,
-            index: None,
         });
         all_points.push(Point {
             point: segment.end,
             point_type: PointType::End,
-            index: None,
         });
     }
     for (index, point) in points.iter().enumerate() {
         all_points.push(Point {
             point: *point,
-            point_type: PointType::Point,
-            index: Some(index),
-        })
+            point_type: PointType::Point { index: index },
+        });
     }
     // sort by position and type
     all_points.sort_by(|a, b| {
@@ -37,7 +34,7 @@ pub fn count_segments_covering_points(segments: &[Segment], points: &[i64]) -> V
         match point.point_type {
             PointType::Start => count += 1,
             PointType::End => count -= 1,
-            PointType::Point => counts[point.index.unwrap()] = count,
+            PointType::Point { index } => counts[index] = count,
         }
     }
     counts
@@ -46,14 +43,14 @@ pub fn count_segments_covering_points(segments: &[Segment], points: &[i64]) -> V
 #[derive(PartialEq, PartialOrd)]
 enum PointType {
     Start,
+    Point { index: usize },
     End,
-    Point,
 }
 
+// generic point type to compare points and segments
 struct Point {
     point: i64,
     point_type: PointType,
-    index: Option<usize>,
 }
 
 pub struct Segment {
