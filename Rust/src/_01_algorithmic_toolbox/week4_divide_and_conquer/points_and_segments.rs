@@ -24,7 +24,7 @@ pub fn count_segments_covering_points(segments: &[Segment], points: &[i64]) -> V
     // sort by position and type
     all_points.sort_by(|a, b| {
         if a.point == b.point {
-            return a.point_type.partial_cmp(&b.point_type).unwrap();
+            return a.point_type.cmp(&b.point_type);
         }
         a.point.cmp(&b.point)
     });
@@ -40,7 +40,7 @@ pub fn count_segments_covering_points(segments: &[Segment], points: &[i64]) -> V
     counts
 }
 
-#[derive(PartialEq, PartialOrd)]
+#[derive(PartialEq, PartialOrd, Eq, Ord)]
 enum PointType {
     Start,
     Point { index: usize },
