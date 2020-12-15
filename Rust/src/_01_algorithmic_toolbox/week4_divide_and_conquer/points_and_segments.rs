@@ -29,7 +29,7 @@ pub fn count_segments_covering_points(segments: &[Segment], points: &[i64]) -> V
         a.point.cmp(&b.point)
     });
     let mut count = 0;
-    let mut counts = vec![0; points.iter().count()];
+    let mut counts = vec![0; points.len()];
     for point in all_points {
         match point.point_type {
             PointType::Start => count += 1,

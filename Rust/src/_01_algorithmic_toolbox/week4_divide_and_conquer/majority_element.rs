@@ -7,16 +7,15 @@ pub fn majority_element(elements: Vec<u64>) -> Option<u64> {
 }
 
 fn majority_element_helper(elements: &[u64]) -> Option<u64> {
-    let elements_length = elements.iter().count();
-    if elements_length == 1 {
+    if elements.len() == 1 {
         return Some(elements[0]);
     }
-    let middle_index = elements_length / 2;
+    let middle_index = elements.len() / 2;
 
     let left_majority = majority_element_helper(&elements[..middle_index]);
     let right_majority = majority_element_helper(&elements[middle_index..]);
 
-    let majority_threshold = elements_length / 2;
+    let majority_threshold = elements.len() / 2;
 
     match (left_majority, right_majority) {
         (Some(left), Some(right)) if left == right => Some(left),

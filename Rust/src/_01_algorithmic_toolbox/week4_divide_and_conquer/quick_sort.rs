@@ -6,24 +6,23 @@ use rand::Rng;
 /// Sorts a sequence of elements in place
 /// Implements randomized quick sort with three way partition: less than, equal and more than
 pub fn quick_sort(elements: &mut [u64]) -> () {
-    let elements_length = elements.iter().count();
-    if elements_length <= 1 {
+    if elements.len() <= 1 {
         return;
     }
-    let (equal_start_index, equal_end_index) = three_way_partition(elements, elements_length);
+    let (equal_start_index, equal_end_index) = three_way_partition(elements);
     quick_sort(&mut elements[..equal_start_index]);
     quick_sort(&mut elements[equal_end_index + 1..]);
 }
 
 // partition three ways: less than, equal, greater than random pivot element
 // return the start and end index (inclusive) of the equal segment of the three way partition
-fn three_way_partition(elements: &mut [u64], elements_length: usize) -> (usize, usize) {
-    let pivot_index = get_pivot_index(elements_length);
+fn three_way_partition(elements: &mut [u64]) -> (usize, usize) {
+    let pivot_index = get_pivot_index(elements.len());
     let pivot_element = elements[pivot_index];
     // swap pivot element to start
     elements.swap(0, pivot_index);
     let mut equal_start_index = 1;
-    let mut equal_end_index = elements_length - 1;
+    let mut equal_end_index = elements.len() - 1;
     let mut index = 1;
     while index <= equal_end_index {
         match elements[index] {
