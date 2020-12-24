@@ -1,7 +1,7 @@
 /**
  * Problem 1 - Money Change
  * @param {number} value total value of coins
- * @returns {number} minimum number of coins of value 1, 5 and 10 that exactly equal value
+ * @returns {number} minimum number of coins of denominator 1, 5 and 10 that exactly changes value
  */
 export function minCoins(value) {
   const numberOf10 = Math.floor(value / 10);
