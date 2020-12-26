@@ -54,7 +54,7 @@ mod test {
         assert_eq!(intermediate_results_5.len(), 4);
         assert_eq!(*intermediate_results_5.last().unwrap(), 5);
         let mut it = intermediate_results_5.into_iter();
-        // check if operations correct
+        // may have multiple results, so lets check if operations correct
         assert_eq!(
             match it.next() {
                 None => true,
