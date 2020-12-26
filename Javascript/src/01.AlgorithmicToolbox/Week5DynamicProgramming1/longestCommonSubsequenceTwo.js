@@ -1,6 +1,6 @@
 /**
  * Problem 4 - Longest Common Subsequence of Two Sequence
- * Compute the length of a longest common subsequence of three sequences
+ * Compute the length of a longest common subsequence of two sequences
  * @param {Array.<string>} first first sequence
  * @param {Array.<string?} second second sequence
  * @returns {number} length of longest common subsequence
