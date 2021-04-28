@@ -4,42 +4,29 @@ defmodule DataStructuresAndAlgorithms.AlgorithmicToolBox.Week1ProgrammingChallen
   """
 
   @doc """
-  # Maximum Pairwise Product Problem
+  # Maximum Pairwise Product
 
-  Given a `list` of `non negative integers`, return the maximum pairwise product, i.e. product between the two largest distinct (different index) numbers in the list
-
-  If success, returns `{:ok, max_pairwise_product}`
-
-  Input must be list of non-negative integers with at least 2 elements, otherwise returns `{:error, :invalid_input}`
+  Given a `list` of `integers`, return the maximum pairwise product, i.e. product between the two largest distinct (different index) numbers in the list
 
   ## Examples
-  iex> import DataStructuresAndAlgorithms.AlgorithmicToolBox.Week1ProgrammingChallenges.MaxPairwiseProduct
-  iex> number_list = [1, 2, 3, 4, 5, 6]
-  iex> max_pairwise_product(number_list)
-  {:ok, 30}
+
+  iex> max_pairwise_product([21468, 16859, 82178, 70496, 82939, 44491])
+  6_815_761_142
+
+  iex> max_pairwise_product([10, 9, 8, 7, 6])
+  90
   """
-  @spec max_pairwise_product(list(non_neg_integer())) ::
-          {:ok, non_neg_integer()} | {:error, :invalid_input}
-  def max_pairwise_product(non_negative_integers) do
-    with :ok <- validate_non_negative_integers(non_negative_integers, 2) do
-      max_a = Enum.max(non_negative_integers)
+  @spec max_pairwise_product(list(integer())) :: integer()
+  def max_pairwise_product(numbers) do
+    {largest, second_largest} =
+      Enum.reduce(numbers, {0, 0}, fn number, {largest, second_largest} = max_pair ->
+        cond do
+          number > largest -> {number, largest}
+          number > second_largest -> {largest, number}
+          true -> max_pair
+        end
+      end)
 
-      max_b =
-        non_negative_integers
-        |> List.delete(max_a)
-        |> Enum.max()
-
-      {:ok, max_a * max_b}
-    end
-  end
-
-  defp validate_non_negative_integers(non_negative_integers, min_length) do
-    if is_list(non_negative_integers) and
-         Enum.all?(non_negative_integers, fn x -> is_integer(x) and x >= 0 end) and
-         length(non_negative_integers) >= min_length do
-      :ok
-    else
-      {:error, :invalid_input}
-    end
+    largest * second_largest
   end
 end
