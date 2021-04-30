@@ -20,6 +20,19 @@ pub fn fibonacci_last_digit(n: Int) {
   fibonacci(n) % 10
 }
 
+// compute the greatest common divisor of two integers
+pub fn gcd(a: Int, b: Int) {
+  case b {
+    0 -> a
+    _ -> gcd(b, a % b)
+  }
+}
+
+// compute the least common multiple of two integers
+pub fn lcm(a: Int, b: Int) {
+  a * b / gcd(a, b)
+}
+
 pub fn fibonacci_test() {
   10
   |> fibonacci
@@ -27,7 +40,7 @@ pub fn fibonacci_test() {
 
   30
   |> fibonacci
-  |> should.equal(832_040)
+  |> should.equal(832040)
 }
 
 pub fn fibonacci_last_digit_test() {
@@ -38,4 +51,14 @@ pub fn fibonacci_last_digit_test() {
   311
   |> fibonacci_last_digit
   |> should.equal(9)
+}
+
+pub fn gcd_test() {
+  gcd(28851538, 1183019)
+  |> should.equal(17657)
+}
+
+pub fn lcm_test() {
+  lcm(28851538, 1183019)
+  |> should.equal(1933053046)
 }
