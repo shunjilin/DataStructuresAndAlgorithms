@@ -1,6 +1,6 @@
-defmodule DataStructuresAndAlgorithms.AlgorithmicToolBox.Week2AlgorithmicWarmup.Fibonacci do
+defmodule DataStructuresAndAlgorithms.AlgorithmicToolBox.Week2AlgorithmicWarmup.Math do
   @moduledoc """
-  # Fibonacci related algorithms
+  # Math related algorithms
   """
 
   @doc """
