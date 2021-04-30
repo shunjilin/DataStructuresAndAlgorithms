@@ -43,4 +43,26 @@ defmodule DataStructuresAndAlgorithms.AlgorithmicToolBox.Week2AlgorithmicWarmup.
     |> do_fibonacci()
     |> Integer.mod(10)
   end
+
+  @doc """
+  # Greatest Common Divisor between two non negative integers
+
+  ## Examples
+  iex> gcd(28851538, 1183019)
+  17657
+  """
+  @spec gcd(non_neg_integer(), non_neg_integer()) :: non_neg_integer()
+  def gcd(a, b)
+  def gcd(a, 0), do: a
+  def gcd(a, b), do: gd(b, Integer.mod(a, b))
+
+  @doc """
+  # Least Common Multiple between two non negative integers
+
+  ## Examples
+  iex> lcm(28851538, 1183019)
+  1933053046
+  """
+  @spec lcm(non_neg_integer(), non_neg_integer()) :: non_neg_integer()
+  def lcm(a, b), do: (a * b / gcd(a, b)) |> trunc()
 end

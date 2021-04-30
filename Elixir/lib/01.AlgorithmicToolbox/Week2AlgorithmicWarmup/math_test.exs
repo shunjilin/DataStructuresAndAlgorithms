@@ -1,4 +1,4 @@
-defmodule FibonacciTest do
+defmodule MathTest do
   use ExUnit.Case
 
   import DataStructuresAndAlgorithms.AlgorithmicToolBox.Week2AlgorithmicWarmup.Math
