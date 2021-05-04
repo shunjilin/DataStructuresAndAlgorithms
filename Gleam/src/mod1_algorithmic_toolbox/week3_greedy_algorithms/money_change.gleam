@@ -2,8 +2,11 @@ import gleam/should
 import gleam/iterator
 import gleam/pair
 
+//
 // Problem 1 - Money Change
+//
 // Given the total `value` of coins, returns the minimum number of coins of denominator 1, 5 and 10 that exactly changes `value`
+//
 pub fn min_coins(value: Int) {
   [10, 5, 1]
   |> iterator.from_list
