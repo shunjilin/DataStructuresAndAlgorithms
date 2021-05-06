@@ -1,3 +1,16 @@
+/**
+ * Maximum Pairwise Product Problem
+ *
+ * Given a list of integers, return the maximum pairwise product,
+ * i.e. product between the two largest distinct (different index) numbers in the list
+ * @param {Array.<number>} numbers list of integers
+ * @returns maximum pairwise product
+ */
+export const maxPairwiseProduct = (numbers) => {
+  const [largest, secondLargest] = getMaxPair(numbers);
+  return largest * secondLargest;
+};
+
 export const getMaxPair = (numbers) => {
   return numbers.reduce(
     ([largest, secondLargest], num) => {
@@ -11,9 +24,4 @@ export const getMaxPair = (numbers) => {
     },
     [0, 0]
   );
-};
-
-export const maxPairwiseProduct = (numbers) => {
-  const [largest, secondLargest] = getMaxPair(numbers);
-  return largest * secondLargest;
 };
