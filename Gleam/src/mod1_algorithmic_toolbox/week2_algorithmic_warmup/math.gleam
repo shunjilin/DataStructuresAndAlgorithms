@@ -6,10 +6,10 @@ import gleam/pair
 pub fn fibonacci(n: Int) {
   iterator.fold(
     iterator.range(from: 1, to: n),
-    tuple(0, 1),
+    #(0, 1),
     fn(_, pair) {
-      let tuple(first, second) = pair
-      tuple(second, first + second)
+      let #(first, second) = pair
+      #(second, first + second)
     },
   )
   |> pair.second

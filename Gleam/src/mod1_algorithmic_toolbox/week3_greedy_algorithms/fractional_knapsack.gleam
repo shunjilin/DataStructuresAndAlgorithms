@@ -22,13 +22,13 @@ pub fn max_value_fractional_knapsack(items: List(Item), capacity: Int) -> Float 
   })
   |> iterator.from_list
   |> iterator.fold(
-    from: tuple(0.0, capacity),
+    from: #(0.0, capacity),
     with: fn(item: Item, pair) {
-      let tuple(value, capacity) = pair
+      let #(value, capacity) = pair
       // take as much of item as possible
       case capacity >= item.weight {
-        True -> tuple(value +. int.to_float(item.value), capacity - item.weight)
-        False -> tuple(
+        True -> #(value +. int.to_float(item.value), capacity - item.weight)
+        False -> #(
           value +. value_over_weight(item) *. int.to_float(capacity),
           0,
         )

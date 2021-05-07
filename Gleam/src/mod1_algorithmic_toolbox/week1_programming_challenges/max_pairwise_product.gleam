@@ -5,17 +5,17 @@ pub fn get_max_pairwise_product(numbers: List(Int)) {
   let max_pair =
     list.fold(
       numbers,
-      tuple(0, 0),
+      #(0, 0),
       fn(num, max_pair) {
-        let tuple(largest, second_largest) = max_pair
+        let #(largest, second_largest) = max_pair
         case num {
-          num if num > largest -> tuple(num, largest)
-          num if num > second_largest -> tuple(largest, num)
+          num if num > largest -> #(num, largest)
+          num if num > second_largest -> #(largest, num)
           _ -> max_pair
         }
       },
     )
-  let tuple(largest, second_largest) = max_pair
+  let #(largest, second_largest) = max_pair
   largest * second_largest
 }
 

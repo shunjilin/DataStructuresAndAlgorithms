@@ -11,10 +11,10 @@ pub fn min_coins(value: Int) {
   [10, 5, 1]
   |> iterator.from_list
   |> iterator.fold(
-    tuple(0, value),
+    #(0, value),
     fn(coin, pair) {
-      let tuple(n_coins, value) = pair
-      tuple(n_coins + value / coin, value % coin)
+      let #(n_coins, value) = pair
+      #(n_coins + value / coin, value % coin)
     },
   )
   |> pair.first
