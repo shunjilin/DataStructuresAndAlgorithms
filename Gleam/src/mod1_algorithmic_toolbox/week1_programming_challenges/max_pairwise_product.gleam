@@ -1,6 +1,7 @@
 import gleam/list
 import gleam/should
 
+// Return maximum pairwise product of a list of integers
 pub fn get_max_pairwise_product(numbers: List(Int)) {
   let max_pair =
     list.fold(

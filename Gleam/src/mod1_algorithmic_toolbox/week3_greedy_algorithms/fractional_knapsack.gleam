@@ -6,14 +6,13 @@ import gleam/iterator
 import gleam/pair
 import gleam/io
 
-//
-// Problem 2 - Maximum Value of the Loot
-//
-// Fractional Knapsack Problem
-//
-// Given items with corresponding values and weights, and a knapsack capacity,
-// returns the maximum value of items that can fit into the knapsack 
-//
+/// Problem 2 - Maximum Value of the Loot
+///
+/// Fractional Knapsack Problem
+///
+/// Given items with corresponding values and weights, and a knapsack capacity,
+/// returns the maximum value of items that can fit into the knapsack 
+///
 pub fn max_value_fractional_knapsack(items: List(Item), capacity: Int) -> Float {
   items
   // sort by descending order of value / weight
