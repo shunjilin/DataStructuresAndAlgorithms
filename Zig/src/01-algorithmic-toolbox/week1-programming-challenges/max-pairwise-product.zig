@@ -1,17 +1,17 @@
 const expect = @import("std").testing.expect;
 
-///Maximum Pairwise Product Problem
+/// Maximum Pairwise Product Problem
 ///
 /// Given a list of integers, return the maximum pairwise product,
 /// i.e. product between the two largest distinct (different index) numbers in the list
 pub fn max_pairwise_product(numbers: []const i64) i64 {
     var max_pair = [2]i64{ 0, 0 };
-    for (numbers) |number| {
-        if (number > max_pair[0]) {
+    for (numbers) |*number| {
+        if (number.* > max_pair[0]) {
             max_pair[1] = max_pair[0];
-            max_pair[0] = number;
-        } else if (number > max_pair[1]) {
-            max_pair[1] = number;
+            max_pair[0] = number.*;
+        } else if (number.* > max_pair[1]) {
+            max_pair[1] = number.*;
         } else {}
     }
     return max_pair[0] * max_pair[1];
